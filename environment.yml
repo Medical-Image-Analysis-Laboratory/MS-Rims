@@ -1,0 +1,35 @@
+name: msrims2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas=1.0.1
+  - python=3.7.0
+  - scipy=1.4.1
+  - xlrd=1.2.0
+  - pip:
+    - bids-validator==1.4.4
+    - deepbrain==0.1
+    - elasticdeform==0.4.6
+    - jupyter==1.0.0
+    - keras-preprocessing==1.1.2
+    - lab==6.0
+    - matplotlib==3.1.2
+    - munkres==1.1.2
+    - nibabel==3.0.0
+    - numpy==1.18.1
+    - opencv-python==4.2.0.32
+    - pip==20.1.1
+    - pybids==0.10.2
+    - scikit-image==0.17.2
+    - scikit-learn==0.23.1
+    - seaborn==0.10.1
+    - simpleitk==1.2.4
+    - sklearn==0.0
+    - tensorflow-gpu==1.15.3
+    - tflearn==0.3.2
+    - tqdm==4.42.0
+    - jupyterlab
+    - statsmodels
+
+prefix: /home/german/miniconda3/envs/msrims2

@@ -1,0 +1,4 @@
+sub_id,patch_id,cont_T2STAR_MAG,cont_FLAIR,other_inf,extra_info 
+s1_test,p1_test,./T2STAR_MAG_rim_patcth.nii.gz,./FLAIR_rim_patcth.nii.gz,random1,ramdom_extra_1
+s1_test,p2_test,./T2STAR_MAG_rim_patcth.nii.gz,./FLAIR_rim_patcth.nii.gz,ramdom2,ramdom_extra_2
+s2_test,p1_test,./T2STAR_MAG_rim_patcth.nii.gz,./FLAIR_rim_patcth.nii.gz,ramdom3,ramdom_extra_3
