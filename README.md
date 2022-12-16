@@ -1,7 +1,7 @@
 ## Running the docker ##
-docker run -v /media/secondary/Francesco_NAS/Rim:/data_2 -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/data:/data -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/models:/models  --gpus device=0  petermcgor/rimnet:0.0.1 dataset_test.csv --model  bimodal_t2star_flair
+You need to mount the data (patches) with a csv file referred them with relative paths (check data folder for an example). The models must be mounted as well (TODO host the models somewhere)  
+```docker run -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/data:/data -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/models:/models  --gpus device=0  petermcgor/rimnet:0.0.1 dataset_test.csv --model  bimodal_t2star_flair```
 
-python inference.py dataset_test.csv --model bimodal_t2star_flair
 # RimNet: A deep 3D multimodal MRI architecture for paramagnetic rim lesions assessment in multiple sclerosis
 
 ## How to use?
