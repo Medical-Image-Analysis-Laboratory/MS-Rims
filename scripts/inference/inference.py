@@ -6,7 +6,8 @@ import numpy as np
 import pandas as pd
 import glob
 
-import SimpleITK as sitk
+#import SimpleITK as sitk
+import nibabel as nib
 
 from training import generate_epoch_batches, process_lesion
 from config import *
@@ -35,7 +36,9 @@ class Patch:
 
     def load(self):
         for contrast, path in self.contrasts_dict_paths.items():
-            patch_array = sitk.GetArrayFromImage(sitk.ReadImage(path))
+            #patch_array = sitk.GetArrayFromImage(sitk.ReadImage(path))
+            #Apparently there is some error with ITK reading and nifti orientations
+            patch_array = nib.load(path).get_fdata() 
             assert all(patch_array.shape == PATCH_SIZE), f"The patch size in {path} (patch_array.shape) is not the valid patch size: {PATCH_SIZE}"
             self.patch_contrasts[contrast] = patch_array
         
