@@ -18,6 +18,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/Medical-Image-Analysis-Laboratory/rimnet:latest
+        tags: ghcr.io/medical-image-analysis-laboratory/rimnet:latest
       env:
         CR_PAT: ${{ secrets.CR_PAT }}
