@@ -31,5 +31,5 @@ jobs:
         context: .
         push: true
         tags: ghcr.io/medical-image-analysis-laboratory/rimnet:latest
-        builder: docker/buildx-build
+        builder: default
 
