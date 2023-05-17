@@ -1,6 +1,40 @@
-## Running the docker ##
-You need to mount the data (patches) with a csv file referred them with relative paths (check data folder for an example). The models must be mounted as well (TODO host the models somewhere)  
-```docker run -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/data:/data -v /home/petermcgor/Documents/Projects/rehab_RIMNET/MS-Rims/models:/models  --gpus device=0  petermcgor/rimnet:0.0.1 dataset_test.csv --model  bimodal_t2star_flair```
+## Using RimNet with Docker
+
+If you want to use only the Docker, just download the `rimnet-basics` file and unzip it wherever is more convenient for you. This file contains two folders:
+
+- `data` folder: where the patches have to be stored and an example of the CSV file needed to run the Docker (see below).
+- `models` folder: containing the RimNet model weights inside.
+
+### Pulling the Docker
+
+To pull the RimNet Docker container, run the following command:
+```
+foo@bar:~$ docker pull ghcr.io/medical-image-analysis-laboratory/rimnet:latest
+```
+
+### Running the Docker
+
+Since RimNet is patch-based, before running the Docker containing RimNet, you will need to extract or gather previously extracted patches of size 28x28x28. All patches must be located under the `rimnet-basics/data` directory (to be mounted by the Docker), however, the hierarchy inside the folder is not relevant since the relative path information will be codified in the CSV file.
+
+The CSV file must contain the following header to identify each pair of patches (remember that RimNet is fed by the patches at the same location from the two MRI contrasts, T2*Phase and FLAIR) uniquely:
+- `sub_id`: codify the subject ID from where the patch was extracted
+- `patch_id`: identify the patch within the subject
+- `cont_T2STAR_PHASE`: Points to the relative path inside the patches folder for the patch corresponding with T2* Phase contrast.
+- `cont_FLAIR`: Points to the relative path inside the patches folder for the patch corresponding with FLAIR contrast
+
+
+Besides, you can add more fields for extra information. We provide an example of such CSV file: check `patches_description_example.csv`
+
+Once your data and CSV file are ready, you can run the Docker in the following way:
+
+```
+foo@bar:~$ docker run -v /path/to/rimnet-basics/rimnet-basics/data:/data -v /path/to/rimnet-basics/rimnet-basics/models:/models --gpus device=0 ghcr.io/medical-image-analysis-laboratory/rimnet:latest patches_description_example.csv --model binet_phase_flair
+```
+
+
+Make sure to replace `/path/to/rimnet-basics/` with your route as the name of the CSV file previously configured.
+
+After running, the file `predictions_binet_phase_flair_all.csv` will be created, giving a prediction per `patch_id`.
 
 # RimNet: A deep 3D multimodal MRI architecture for paramagnetic rim lesions assessment in multiple sclerosis
 
