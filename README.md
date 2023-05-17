@@ -1,4 +1,24 @@
-## Using RimNet with Docker
+# Tools for Automatic Classification of Rim Lesions in Multiple Sclerosis: Streamline RimNet
+
+This site provides two tools to ease the classification of Paramagnetic Rim Lesions employing **RimNet**, the method proposed in the paper "*RimNet: A deep 3D multimodal MRI architecture for paramagnetic rim lesion assessment in multiple sclerosis*" by Barquero et al. NeuroImage: Clinical (2020).
+
+To boost the use of **RimNet** by clinicians and medical imaging practitioners, we present two independent tools capable of making predictions over patches containing Rim lesions when employing FLAIR and T2* Phase MRI contrasts from the same model presented in the mentioned work.
+1. 3D-Slicer plugin: This tool is more appropriate for research and clinical environments where users need to manually inspect images to select suspicious MS manifestations.
+2. Dockerized version of RimNet: This tool is more appropriate for processing pipelines as it allows RimNet to be run, thereby obtaining predictions for possible rims by executing a single command.
+
+## 1. Using 3D-Slicer plugin
+
+Within the file `filename`, we include a standalone version of 3D-Slicer with the semi-rimnet plugin which allows:
+
+- Comfortably navigate through the different available MRI contrasts to check for lesions (align images, switch contrasts, crosshair with mouse drag & drop navigation, etc.)
+- Pick possible lesions
+- Add annotations and the expert confidence opinion
+- Run RimNet to obtain a prediction about the lesion being a rim or not
+- Save the data for further analysis
+
+Within `filename`, we include a complete manual, `Instructions.pdf`.
+
+## 2. Using RimNet with Docker
 
 If you want to use only the Docker, just download the `rimnet-basics` file and unzip it wherever is more convenient for you. This file contains two folders:
 
@@ -35,6 +55,16 @@ foo@bar:~$ docker run -v /path/to/rimnet-basics/rimnet-basics/data:/data -v /pat
 Make sure to replace `/path/to/rimnet-basics/` with your route as the name of the CSV file previously configured.
 
 After running, the file `predictions_binet_phase_flair_all.csv` will be created, giving a prediction per `patch_id`.
+
+
+
+#### People using in part or fully this software, any of both tools, should cite:
+
+[1] Barquero et al.
+[2] Ectrims?
+
+
+
 
 # RimNet: A deep 3D multimodal MRI architecture for paramagnetic rim lesions assessment in multiple sclerosis
 
