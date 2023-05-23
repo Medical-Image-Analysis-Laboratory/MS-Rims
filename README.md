@@ -6,6 +6,8 @@ To boost the use of **RimNet** by clinicians and medical imaging practitioners, 
 1. 3D-Slicer plugin: This tool is more appropriate for research and clinical environments where users need to manually inspect images to select suspicious MS manifestations.
 2. Dockerized version of RimNet: This tool is more appropriate for processing pipelines as it allows RimNet to be run, thereby obtaining predictions for possible rims by executing a single command.
 
+![Alt Text](https://github.com/Medical-Image-Analysis-Laboratory/MS-Rims/blob/main/StreamlineRIMNET.png)
+
 ## 1. Using 3D-Slicer plugin
 
 Within the file `filename`, we include a standalone version of 3D-Slicer with the semi-rimnet plugin which allows:
