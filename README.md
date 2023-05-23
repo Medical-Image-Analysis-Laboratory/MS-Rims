@@ -11,7 +11,8 @@ To boost the use of **RimNet** by clinicians and medical imaging practitioners, 
 Within the file `filename`, we include a standalone version of 3D-Slicer with the semi-rimnet plugin which allows:
 
 - Comfortably navigate through the different available MRI contrasts to check for lesions (align images, switch contrasts, crosshair with mouse drag & drop navigation, etc.)
-- Pick possible lesions
+- Pick possible lesions by manual selection
+- Pick possible lesions automatically by using a binary mask
 - Add annotations and the expert confidence opinion
 - Run RimNet to obtain a prediction about the lesion being a rim or not
 - Save the data for further analysis
@@ -60,8 +61,8 @@ After running, the file `predictions_binet_phase_flair_all.csv` will be created,
 
 #### People using in part or fully this software, any of both tools, should cite:
 
-[1] Barquero et al.
-[2] Ectrims?
+[1] G. Barquero et al., Neuroimage Clinical (2020), DOI: 10.1016/j.nicl.2020.102412
+[2] J. Najm et al., Zenodo 2023, DOI: 10.5281/zenodo.7962482
 
 
 
