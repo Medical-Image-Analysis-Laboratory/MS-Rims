@@ -39,7 +39,7 @@ class Patch:
             #patch_array = sitk.GetArrayFromImage(sitk.ReadImage(path))
             #Apparently there is some error with ITK reading and nifti orientations
             patch_array = nib.load(path).get_fdata() 
-            assert all(patch_array.shape == PATCH_SIZE), f"The patch size in {path} (patch_array.shape) is not the valid patch size: {PATCH_SIZE}"
+            assert all(patch_array.shape == PATCH_SIZE), f"The patch size in {path} ({patch_array.shape}) is not the valid patch size: {PATCH_SIZE}"
             self.patch_contrasts[contrast] = patch_array
         
     def process_lesion(self, contrasts_order:list, normalization="local_max"):
