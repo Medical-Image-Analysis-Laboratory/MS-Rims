@@ -37,7 +37,7 @@ foo@bar:~$ docker pull ghcr.io/medical-image-analysis-laboratory/rimnet:latest
 
 ### Running the Docker
 
-Since RimNet is patch-based, before running the Docker containing RimNet, you will need to extract or gather previously extracted patches of size 28x28x28. All patches must be located under the `rimnet-basics/data` directory (to be mounted by the Docker), however, the hierarchy inside the folder is not relevant since the relative path information will be codified in the CSV file.
+Since RimNet is patch-based, before running the Docker containing RimNet, you will need to extract or gather previously extracted patches of size 34x34x34. All patches must be located under the `rimnet-basics/data` directory (to be mounted by the Docker), however, the hierarchy inside the folder is not relevant since the relative path information will be codified in the CSV file.
 
 The CSV file must contain the following header to identify each pair of patches (remember that RimNet is fed by the patches at the same location from the two MRI contrasts, T2*Phase and FLAIR) uniquely:
 - `sub_id`: codify the subject ID from where the patch was extracted
